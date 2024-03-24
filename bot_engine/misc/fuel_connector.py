@@ -30,7 +30,7 @@ def get_info():
 
     # chrome = webdriver.Chrome()
     chrome.get('https://www.okko.ua/fuel-for-business')
-    time.sleep(10)
+    time.sleep(15)
     original_window = chrome.current_window_handle
     print(chrome.page_source)
 
