@@ -20,6 +20,7 @@ def get_info():
     chrome.get('https://www.okko.ua/fuel-for-business')
     time.sleep(10)
     original_window = chrome.current_window_handle
+    print(chrome.page_source)
 
     try:
         chrome.find_element(By.PARTIAL_LINK_TEXT, 'ВХІД В КАБІНЕТ').click()
