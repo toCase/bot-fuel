@@ -9,12 +9,12 @@ config=load_config('.env')
 
 def get_info():
     info :str = "INFO MESSAGE"
-    # options = Options()
-    # options.add_argument("--headless")
-    # chrome_driver_path = "/usr/lib/chromium-browser/chromedriver"
-    #
-    # chrome = webdriver.Chrome(service=chrome_driver_path, options=options)
-    chrome = webdriver.Chrome()
+    options = Options()
+    options.add_argument("--headless")
+    chrome_driver_path = "/usr/bin/chromedriver"
+
+    chrome = webdriver.Chrome(service=chrome_driver_path, options=options)
+    # chrome = webdriver.Chrome()
     chrome.get('https://www.okko.ua/fuel-for-business')
     time.sleep(10)
     original_window = chrome.current_window_handle
