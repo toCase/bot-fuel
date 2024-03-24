@@ -10,10 +10,12 @@ config=load_config('.env')
 def get_info():
     info :str = "INFO MESSAGE"
     options = Options()
-    options.add_argument("--headless")
+    options.add_argument("--headless")  # Запуск браузера в режиме без графического интерфейса
+    options.add_argument("--disable-gpu")  # Отключение GPU
+    driver = webdriver.Chrome(options=options)
     chrome_driver_path = "/usr/bin/chromedriver"
 
-    chrome = webdriver.Chrome('/usr/bin/chromedriver') #, options=options)
+    chrome = webdriver.Chrome(options=options)
 
     # chrome = webdriver.Chrome()
     chrome.get('https://www.okko.ua/fuel-for-business')
