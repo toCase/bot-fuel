@@ -12,6 +12,7 @@ def get_info():
     options = Options()
     options.page_load_strategy = 'normal'
     options.add_argument("--headless=new")  # Запуск браузера в режиме без графического интерфейса
+    options.add_argument("--enable-javascript")
     # options.add_argument("--disable-gpu")  # Отключение GPU
 
 
