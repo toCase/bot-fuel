@@ -10,9 +10,18 @@ config=load_config('.env')
 def get_info():
     info :str = "INFO MESSAGE"
     options = Options()
-    options.page_load_strategy = 'normal'
-    options.add_argument("--headless=new")  # Запуск браузера в режиме без графического интерфейса
+    # options.page_load_strategy = 'normal'
+    options.add_argument("--headless=new")
+    options.add_argument("--incognito")
+    options.add_argument("--nogpu")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--window-size=1280,1280")
+    options.add_argument("--no-sandbox")
+    # Запуск браузера в режиме без графического интерфейса
     options.add_argument("--enable-javascript")
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option('useAutomationExtension', False)
+    options.add_argument('--disable-blink-features=AutomationControlled')
     # options.add_argument("--disable-gpu")  # Отключение GPU
 
 
