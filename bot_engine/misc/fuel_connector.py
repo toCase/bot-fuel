@@ -20,7 +20,7 @@ def get_info():
     # Запуск браузера в режиме без графического интерфейса
     options.add_argument("--enable-javascript")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option('useAutomationExtension', False)
+    # options.add_experimental_option('useAutomationExtension', False)
     options.add_argument('--disable-blink-features=AutomationControlled')
     # options.add_argument("--disable-gpu")  # Отключение GPU
 
@@ -30,7 +30,7 @@ def get_info():
 
     # chrome = webdriver.Chrome()
     chrome.get('https://www.okko.ua/fuel-for-business')
-    time.sleep(15)
+    time.sleep(30)
     original_window = chrome.current_window_handle
     print(chrome.page_source)
 
