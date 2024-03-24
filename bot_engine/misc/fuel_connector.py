@@ -13,7 +13,8 @@ def get_info():
     options.add_argument("--headless")
     chrome_driver_path = "/usr/bin/chromedriver"
 
-    chrome = webdriver.Chrome(service=chrome_driver_path, options=options)
+    chrome = webdriver.Chrome('/usr/bin/chromedriver', options=options)
+
     # chrome = webdriver.Chrome()
     chrome.get('https://www.okko.ua/fuel-for-business')
     time.sleep(10)
