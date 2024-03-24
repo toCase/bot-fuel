@@ -10,8 +10,10 @@ config=load_config('.env')
 def get_info():
     info :str = "INFO MESSAGE"
     options = Options()
+    options.page_load_strategy = 'normal'
     options.add_argument("--headless")  # Запуск браузера в режиме без графического интерфейса
     options.add_argument("--disable-gpu")  # Отключение GPU
+
 
     service = webdriver.ChromeService(executable_path='/usr/bin/chromedriver')
     chrome = webdriver.Chrome(service=service, options=options)
