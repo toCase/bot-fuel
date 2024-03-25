@@ -22,7 +22,7 @@ async def get_info():
 
     await url.waitFor(7000)
     print("BUT CLICK")
-    print(url.content())
+    print(await url.content())
 
     cells = await url.querySelectorAll('ob-favorite-contracts mat-cell')
     
