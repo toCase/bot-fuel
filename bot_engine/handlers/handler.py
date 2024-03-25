@@ -1,3 +1,4 @@
+import asyncio
 from aiogram import Router, F
 from aiogram.filters import Command
 from aiogram.types import Message, ContentType
@@ -5,7 +6,7 @@ from aiogram.fsm.context import FSMContext
 
 from bot_engine.config import load_config
 from bot_engine.keyboards import keyboard
-from bot_engine.misc import fuel_connector
+from bot_engine.misc import fuel_connector, fuel
 
 router=Router()
 config=load_config('.env')
@@ -20,7 +21,8 @@ async def cmd_start(message: Message, state: FSMContext):
 
 @router.message(F.text.lower() == 'info')
 async def cmd_fuel(message: Message):
-    messa = fuel_connector.get_info()
+    messa = await fuel.get_info()
+    # messa = fuel_connector.get_info()
     await  message.answer(messa, reply_markup=keyboard.keyboard_start())
 
 @router.message()

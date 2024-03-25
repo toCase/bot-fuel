@@ -10,7 +10,7 @@ config=load_config('.env')
 def get_info():
     info :str = "INFO MESSAGE"
     options = Options()
-    # options.page_load_strategy = 'normal'
+    options.page_load_strategy = 'normal'
     options.add_argument("--headless=new")
     options.add_argument("--incognito")
     options.add_argument("--nogpu")
@@ -25,10 +25,10 @@ def get_info():
     # options.add_argument("--disable-gpu")  # Отключение GPU
 
 
-    service = webdriver.ChromeService(executable_path='/usr/bin/chromedriver')
-    chrome = webdriver.Chrome(service=service, options=options)
+    # service = webdriver.ChromeService(executable_path='/usr/bin/chromedriver')
+    # chrome = webdriver.Chrome(service=service, options=options)
 
-    # chrome = webdriver.Chrome()
+    chrome = webdriver.Chrome()
     chrome.get('https://www.okko.ua/fuel-for-business')
     time.sleep(30)
     original_window = chrome.current_window_handle
