@@ -20,10 +20,12 @@ async def get_info():
     buts = await url.querySelectorAll('ob-card-body button')
     await buts[1].click()
 
-    await url.waitFor(4000)
+    await url.waitFor(7000)
     print("BUT CLICK")
+    print(url.content())
 
     cells = await url.querySelectorAll('ob-favorite-contracts mat-cell')
+    
     print("CELLS: ", len(cells))
     for cell in cells:
         _str = (await cell.getProperty('textContent')).toString()
