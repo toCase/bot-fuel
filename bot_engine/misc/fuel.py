@@ -6,7 +6,7 @@ config=load_config('.env')
 
 async def get_info():
     info: str = "ЖДТ-СЕРВІС"
-    browserObj = await launch({"headless": True})
+    browserObj = await launch({"executablePath": '/usr/bin/chromium-browser', "headless": True})
     url = await browserObj.newPage()
     await url.goto("https://ssp-online.okko.ua/login")
     await url.waitFor(10000)
