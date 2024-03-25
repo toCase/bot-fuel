@@ -21,8 +21,10 @@ async def get_info():
     await buts[1].click()
 
     await url.waitFor(4000)
+    print("BUT CLICK")
 
     cells = await url.querySelectorAll('ob-favorite-contracts mat-cell')
+    print("CELLS: ", len(cells))
     for cell in cells:
         _str = (await cell.getProperty('textContent')).toString()
         info = info + " -- " + _str.replace('JSHandle:', '')
